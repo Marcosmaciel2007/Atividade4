@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
-  <title>jsdom</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>jsdom</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
+
 <body>
     <div class="container mt-3">
         <div class="card-columns">
@@ -31,18 +34,44 @@
                     <button type="button" class="btn btn-primary" id="bt-c">Adicionar</button>
                 </div>
             </div>
-        </div>    
+        </div>
         <div class="card text-center">
-            <div class="card-body"><h4 class="card-title">R$ <span id="total">0.00</span></h4></div>
+            <div class="card-body">
+                <h4 class="card-title">R$ <span id="total">0.00</span></h4>
+            </div>
         </div>
     </div>
 </body>
 <script>
 
+    const btA = document.querySelector('#bt-a');
+
+    const btB = document.querySelector('#bt-b');
+
+    const btC = document.querySelector('#bt-c');
+
+    const total = document.querySelector('#total');
+
+
+
+    function somaTotal() {
+        if (this == btA) {
+            total.innerText = parseFloat(total.innerText) + 5;
+        }
+        else if (this == btB) {
+            total.innerText = parseFloat(total.innerText) + 10;
+        }
+        else {
+            total.innerText = parseFloat(total.innerText) + 20;
+        }
+    }
+
+    btA.addEventListener('click', somaTotal);
+
+    btB.addEventListener('click', somaTotal);
+
+    btC.addEventListener('click', somaTotal);
 
 </script>
 
-
-
-</script>
 </html>
